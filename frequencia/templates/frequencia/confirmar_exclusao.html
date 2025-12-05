@@ -1,0 +1,10 @@
+<h2>Confirmação de Exclusão</h2>
+
+<p>Tem certeza que deseja excluir: <strong>{{ obj }}</strong> ?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Excluir</button>
+</form>
+
+<a href="javascript:history.back()">Cancelar</a>
