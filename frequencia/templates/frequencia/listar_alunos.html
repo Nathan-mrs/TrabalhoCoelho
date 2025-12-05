@@ -1,0 +1,27 @@
+<h2>Lista de Alunos</h2>
+
+<a href="/alunos/novo/">Adicionar aluno</a>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Nome</th>
+        <th>Matrícula</th>
+        <th>Curso</th>
+        <th>Ações</th>
+    </tr>
+
+    {% for a in alunos %}
+    <tr>
+        <td>{{ a.nome }}</td>
+        <td>{{ a.matricula }}</td>
+        <td>{{ a.curso }}</td>
+        <td>
+            <a href="/alunos/editar/{{ a.id }}/">Editar</a> |
+            <a href="/alunos/excluir/{{ a.id }}/">Excluir</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/frequencias/">Ver frequências</a>
+<p><a href="/">Voltar para a Página Inicial</a></p>

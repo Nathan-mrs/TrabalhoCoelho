@@ -1,0 +1,27 @@
+<h2>Frequências</h2>
+
+<a href="/frequencias/novo/">Registrar presença</a>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Aluno</th>
+        <th>Data</th>
+        <th>Status</th>
+        <th>Ações</th>
+    </tr>
+
+    {% for f in freq %}
+    <tr>
+        <td>{{ f.aluno.nome }}</td>
+        <td>{{ f.data }}</td>
+        <td>{{ f.presente|yesno:"Presente,Ausente" }}</td>
+        <td>
+            <a href="/frequencias/editar/{{ f.id }}/">Editar</a> |
+            <a href="/frequencias/excluir/{{ f.id }}/">Excluir</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/alunos/">Ver alunos</a>
+<p><a href="/">Voltar para a Página Inicial</a></p>
