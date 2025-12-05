@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import aluno, frequencia
 from .forms import AlunoForm, FrequenciaForm
 
+# HOME VIEW
+def home(request):
+    return render(request, 'home/home.html')
 
 # ==========================
 # CRUD ALUNO
