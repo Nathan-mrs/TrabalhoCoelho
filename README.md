@@ -1,4 +1,4 @@
-# TrabalhoCoelho
+
 # 📘 Sistema de Registro de Frequência Escolar
 
 Este projeto é um sistema simples desenvolvido em **Django** para cadastrar alunos e registrar a presença deles.  
