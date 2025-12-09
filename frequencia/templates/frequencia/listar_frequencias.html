@@ -1,27 +1,108 @@
-<h2>Frequências</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequencia de Alunos</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    .btn-nova-frequencia {
+        background: #16a34a; /* verde */
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .btn-nova-frequencia:hover {
+        background: #15803d;
+    }
+    .btn-editar-frequencia {
+        background: #2563eb; /* azul */
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .btn-editar-frequencia:hover {
+        background: #1d4ed8;
+    }
+    .btn-excluir-frequencia {
+        background: #dc2626; /* vermelho */
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .btn-excluir-frequencia:hover {
+        background: #b91c1c;
+    }
+    .btn-alunos {
+        background: #f59e0b; /* amarelo */
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .btn-alunos:hover {
+        background: #d97706;
+    }
+    .btn-voltar-home {
+        background: #6b7280; /* cinza */
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 10px;
+        display: inline-block;
+    }
+</style>
+<body>
+    <h2>Frequências</h2>
 
-<a href="/frequencias/novo/">Registrar presença</a>
+    <a href="/frequencias/novo/" class="btn-nova-frequencia">Registrar presença</a>
+    <a href="/alunos/" class="btn-alunos">Ver alunos</a>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Aluno</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
 
-<table border="1" cellpadding="5">
-    <tr>
-        <th>Aluno</th>
-        <th>Data</th>
-        <th>Status</th>
-        <th>Ações</th>
-    </tr>
+        {% for f in freq %}
+        <tr>
+            <td>{{ f.aluno.nome }}</td>
+            <td>{{ f.data }}</td>
+            <td>{{ f.presente|yesno:"Presente,Ausente" }}</td>
+            <td>
+                <a href="/frequencias/editar/{{ f.id }}/" class="btn-editar-frequencia">Editar</a> |
+                <a href="/frequencias/excluir/{{ f.id }}/" class="btn-excluir-frequencia">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 
-    {% for f in freq %}
-    <tr>
-        <td>{{ f.aluno.nome }}</td>
-        <td>{{ f.data }}</td>
-        <td>{{ f.presente|yesno:"Presente,Ausente" }}</td>
-        <td>
-            <a href="/frequencias/editar/{{ f.id }}/">Editar</a> |
-            <a href="/frequencias/excluir/{{ f.id }}/">Excluir</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-
-<a href="/alunos/">Ver alunos</a>
-<p><a href="/">Voltar para a Página Inicial</a></p>
+    <p><a href="/" class="btn-voltar-home">Voltar para a Página Inicial</a></p>
+</body>
+</html>

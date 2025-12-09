@@ -1,10 +1,84 @@
-<h2>Confirmação de Exclusão</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f8fafc; /* cinza claro bonito */
+    }
 
-<p>Tem certeza que deseja excluir: <strong>{{ obj }}</strong> ?</p>
+    h2 {
+        color: #dc2626; /* vermelho */
+    }
 
-<form method="post">
-    {% csrf_token %}
+    p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #dc2626; /* vermelho */
+        color: white;
+        padding: 10px 10px;
+        position: center;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    button:hover {
+        background-color: #b91c1c; /* vermelho mais escuro */
+    }
+
+    a {
+        color: #2563eb; /* azul */
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+    .btn-voltar {
+        background-color: #6b7280; /* cinza */
+        color: white;
+        padding: 10px 10px;
+        position: center;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    .btn-voltar:hover {
+        background-color: #4b5563; /* cinza mais escuro */
+    }
+</style>
+<body>
+    <h2>Confirmação de Exclusão</h2>
+
+    <p>Tem certeza que deseja excluir: <strong>{{ obj }}</strong> ?</p>
+
+    <form method="post">
+        {% csrf_token %}
     <button type="submit">Excluir</button>
+    <a href="javascript:history.back()" class="btn-voltar">Voltar</a>
+
 </form>
 
-<a href="javascript:history.back()">Cancelar</a>
+</body>
+</html>
+

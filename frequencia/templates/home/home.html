@@ -1,8 +1,111 @@
-<h2>Sistema de Frequência</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+        .navbar {
+        background: #1e293b; /* azul escuro */
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        font-family: sans-serif;
 
-<p>O que você deseja fazer?</p>
+    }
+    .navbar .logo {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .navbar .links a {
+        color: #e2e8f0;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+    .navbar .links a:hover {
+        color: white;
+    }
+    .navbar .links .btn-voltar-home {
+        background: #dc2626; /* vermelho */
+        color: white;
+        padding: 5px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .navbar .links .btn-voltar-home:hover {
+        background: #b91c1c;
+    }
+    .navbar .links .btn-alunos {
+        background: #f59e0b; /* amarelo */
+        color: white;
+        padding: 5px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .navbar .links .btn-alunos:hover {
+        background: #d97706;
+    }
+    .navbar .links .btn-frequencias {
+        background: #16a34a; /* verde */
+        color: white;
+        padding: 5px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .navbar .links .btn-frequencias:hover {
+        background: #15803d;
+    }
+    .btn-gerenciar-alunos {
+        background: #2563eb; /* azul */
+        color: white;
+        padding: 5px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .btn-gerenciar-alunos:hover {
+        background: #1d4ed8;
+    }
+    .btn-gerenciar-frequencia {
+        background: #16a34a; /* verde */
+        color: white;
+        padding: 5px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .btn-gerenciar-frequencia:hover {
+        background: #15803d;
+    }
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo">Sistema de Frequência</div>
+        <div class="links">
+            <a href="/" class="btn-voltar-home">Home</a>
+            <a href="/alunos/" class="btn-alunos">Alunos</a>
+            <a href="/frequencias/" class="btn-frequencias">Frequências</a>
+        </div>
+    </div>
+
+
+
+<h2>O que você deseja fazer?</h2>
 
 <ul>
-    <li><a href="{% url 'listar_alunos' %}">Gerenciar Alunos</a></li>
-    <li><a href="{% url 'listar_frequencias' %}">Gerenciar Frequências</a></li>
-</ul>
+    <a href="{% url 'listar_alunos' %}" class="btn-gerenciar-alunos">Gerenciar Alunos</a>
+    <a href="{% url 'listar_frequencias' %}" class="btn-gerenciar-frequencia">Gerenciar Frequências</a>
+</ul>   
+</body>
+</html>

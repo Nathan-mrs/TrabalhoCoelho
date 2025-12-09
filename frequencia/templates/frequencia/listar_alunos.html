@@ -1,6 +1,96 @@
-<h2>Lista de Alunos</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+        font-family: sans-serif;
+        justify-content: center;
+        align-items: center;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+        .botao-editar {
+        background: #2563eb; /* azul */
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
 
-<a href="/alunos/novo/">Adicionar aluno</a>
+    .btn-editar:hover {
+        background: #1d4ed8;
+    }
+    .botao-excluir {
+        background: #dc2626; /* vermelho */
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    .botao-excluir:hover {
+        background: #b91c1c;
+    }
+    .btn-novo-aluno {
+        background: #16a34a; /* verde */
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .btn-novo-aluno:hover {
+        background: #15803d;
+    }
+    .btn-frequencias {
+        background: #f59e0b; /* amarelo */
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .btn-frequencias:hover {
+        background: #d97706;
+    }
+    .btn-voltar-home {
+        background: #6b7280; /* cinza */
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .btn-voltar-home:hover {
+        background: #4b5563;
+    }
+
+</style>
+<body>
+    <h2>Lista de Alunos</h2>
+
+<a href="/alunos/novo/" class = "btn-novo-aluno">Adicionar aluno</a>
+<a href="/frequencias/" class="btn-frequencias">Ver frequências</a>
 
 <table border="1" cellpadding="5">
     <tr>
@@ -16,12 +106,15 @@
         <td>{{ a.matricula }}</td>
         <td>{{ a.curso }}</td>
         <td>
-            <a href="/alunos/editar/{{ a.id }}/">Editar</a> |
-            <a href="/alunos/excluir/{{ a.id }}/">Excluir</a>
+            <a href="/alunos/editar/{{ a.id }}/" class = "botao-editar">Editar</a> |
+            <a href="/alunos/excluir/{{ a.id }}/" class = "botao-excluir">Excluir</a>
         </td>
     </tr>
     {% endfor %}
 </table>
 
-<a href="/frequencias/">Ver frequências</a>
-<p><a href="/">Voltar para a Página Inicial</a></p>
+<p><a href="/" class="btn-voltar-home">Voltar para a Página Inicial</a></p>
+</body>
+</html>
+
+

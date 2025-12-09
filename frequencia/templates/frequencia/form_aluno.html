@@ -1,9 +1,96 @@
-<h2>Cadastro de Aluno</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        font-family: sans-serif;;
+        margin: 20px;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin:0;
+    }
 
-<form method="post">
+    .btn-alunos {
+        background: #e1ab09; /* amarelo */
+        color: white;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s
+    }
+    .btn-alunos:hover {
+        background: #d97706;
+    }
+
+    /* Container geral do formulário */
+    .formulario {
+        font-family: sans-serif;
+        width: 320px;         
+        margin-top: 10px;
+        padding: 35px;
+        background: #f8fafc;       /* cinza claro bonito */
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Labels mais discretos e próximos */
+    .formulario label {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #334155;
+    }
+
+    /* Inputs mais compactos */
+    .formulario input[type="text"],
+    .formulario input[type="number"],
+    .formulario input[type="date"],
+    .formulario input[type="email"],
+    .formulario select {
+        width: 100%;
+        padding: 6px 8px;
+        margin-bottom: 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    /* Botão Salvar */
+    .formulario button[type="submit"] {
+        background: #2563eb;
+        color: white;
+        padding: 6px 14px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+    .formulario button[type="submit"]:hover {
+        background: #1e40af;
+    }
+
+</style>
+<body>
+<form method="post" class="formulario" complete="off">
+    <h2>Formulario Aluno</h2>
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Salvar</button>
+    <a href="/alunos/" class="btn-alunos">Voltar</a>
 </form>
-
-<a href="/alunos/">Voltar</a>
+</body>
+</html>
