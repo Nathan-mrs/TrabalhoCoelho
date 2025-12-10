@@ -57,8 +57,8 @@ Acessar no navegador:
 
 ### **Aluno**
 - Nome  
-- Idade  
-- Turma  
+- Matricula  
+- Curso  
 
 ### **Frequência**
 - Aluno  
